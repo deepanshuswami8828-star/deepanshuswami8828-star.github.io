@@ -1,573 +1,598 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Deepanshu Swami — CV</title>
-<meta name="description" content="Deepanshu Swami — B.Tech AI & Data Science student. Android, IoT and cybersecurity.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --paper:#ECEFE7;
-    --paper-2:#E3E8DA;
-    --ink:#19231C;
-    --ink-soft:#445143;
-    --muted:#6B7A6C;
-    --panel:#13201A;
-    --panel-2:#1B2B22;
-    --copper:#C97D3F;
-    --solder:#D9A24B;
-    --line:#C7CFBE;
-    --radius:3px;
-    --display:'Space Grotesk', sans-serif;
-    --body:'Inter', sans-serif;
-    --mono:'IBM Plex Mono', monospace;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepanshu Swami | B.Tech Student & Software Builder</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Portfolio of Deepanshu Swami - B.Tech in AI & Data Science. Engineering on-device ML apps, embedded security, and Android tools.">
+    <meta name="keywords" content="Deepanshu Swami, Developer Portfolio, AI & Data Science, Android Developer, Kotlin, IoT, Cybersecurity, Delhi">
+    <meta name="author" content="Deepanshu Swami">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://deepanshu-portfolio-ebon.vercel.app/">
+    <meta property="og:title" content="Deepanshu Swami | Where Silicon Meets Code">
+    <meta property="og:description" content="B.Tech (AI & Data Science) student building on-device ML apps, embedded security systems, and Android tools. Check out my work.">
+    <meta property="og:image" content="https://deepanshu-portfolio-ebon.vercel.app/og-image.png">
 
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:var(--body);
-    font-size:16px;
-    line-height:1.55;
-    -webkit-font-smoothing:antialiased;
-  }
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://deepanshu-portfolio-ebon.vercel.app/">
+    <meta property="twitter:title" content="Deepanshu Swami | Where Silicon Meets Code">
+    <meta property="twitter:description" content="B.Tech (AI & Data Science) student building on-device ML apps, embedded security systems, and Android tools. Check out my work.">
+    <meta property="twitter:image" content="https://deepanshu-portfolio-ebon.vercel.app/og-image.png">
 
-  a{color:var(--ink);}
-  a:focus-visible, button:focus-visible{
-    outline:2px solid var(--copper);
-    outline-offset:3px;
-  }
+    <!-- Inline SVG Favicon (Stylized Microchip & Code Brackets) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='4' width='16' height='16' rx='2'/><path d='M9 9h6v6H9z'/><path d='M9 1v3'/><path d='M15 1v3'/><path d='M9 20v3'/><path d='M15 20v3'/><path d='M20 9h3'/><path d='M20 15h3'/><path d='M1 9h3'/><path d='M1 15h3'/></svg>">
 
-  .sheet{
-    max-width:880px;
-    margin:0 auto;
-    background:var(--paper);
-    position:relative;
-  }
-
-  /* ---------- background trace texture (header only) ---------- */
-  .trace-bg{
-    position:absolute;
-    inset:0;
-    opacity:0.16;
-    pointer-events:none;
-  }
-
-  /* ---------- HEADER / PCB PANEL ---------- */
-  header.panel{
-    background:var(--panel);
-    background-image:
-      linear-gradient(135deg, var(--panel) 0%, var(--panel-2) 100%);
-    color:#EFEBDD;
-    padding:48px 44px 40px;
-    position:relative;
-    overflow:hidden;
-    border-bottom:3px solid var(--copper);
-  }
-
-  .pad-grid{
-    position:absolute;
-    inset:0;
-    background-image:radial-gradient(circle, rgba(217,162,74,0.16) 1px, transparent 1.4px);
-    background-size:18px 18px;
-    opacity:0.5;
-    pointer-events:none;
-  }
-
-  .head-row{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    gap:24px;
-    position:relative;
-    z-index:1;
-    flex-wrap:wrap;
-  }
-
-  .id-block .eyebrow{
-    font-family:var(--mono);
-    font-size:11px;
-    letter-spacing:0.18em;
-    color:var(--solder);
-    text-transform:uppercase;
-    margin:0 0 10px;
-  }
-
-  .id-block h1{
-    font-family:var(--display);
-    font-weight:700;
-    font-size:clamp(32px, 5vw, 46px);
-    letter-spacing:0.01em;
-    margin:0 0 8px;
-    color:#F6F3E9;
-  }
-
-  .id-block .role{
-    font-family:var(--body);
-    font-size:15.5px;
-    color:#C9D2C2;
-    max-width:480px;
-    margin:0;
-  }
-
-  .contact-rail{
-    display:flex;
-    flex-direction:column;
-    gap:9px;
-    font-family:var(--mono);
-    font-size:13px;
-    color:#D8DCCD;
-    position:relative;
-    z-index:1;
-    min-width:210px;
-  }
-
-  .contact-rail a{
-    color:#D8DCCD;
-    text-decoration:none;
-    display:flex;
-    align-items:center;
-    gap:8px;
-    transition:color .15s ease;
-  }
-  .contact-rail a:hover{color:var(--solder);}
-  .contact-rail svg{width:14px;height:14px;flex:none;opacity:0.85;}
-
-  /* ---------- SUMMARY STRIP ---------- */
-  .summary{
-    padding:30px 44px 8px;
-    font-size:16px;
-    color:var(--ink-soft);
-    max-width:760px;
-    border-bottom:1px solid var(--line);
-    padding-bottom:30px;
-  }
-  .summary strong{color:var(--ink);font-weight:600;}
-
-  /* ---------- SECTION SCAFFOLD ---------- */
-  section{
-    padding:34px 44px;
-    border-bottom:1px solid var(--line);
-  }
-  section:last-of-type{border-bottom:none;}
-
-  .sec-label{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin:0 0 22px;
-  }
-  .sec-label .tag{
-    font-family:var(--mono);
-    font-size:11px;
-    letter-spacing:0.16em;
-    text-transform:uppercase;
-    color:var(--copper);
-    border:1px solid var(--copper);
-    padding:3px 8px;
-    border-radius:var(--radius);
-    background:rgba(201,125,63,0.07);
-  }
-  .sec-label .rule{
-    flex:1;
-    height:1px;
-    background:repeating-linear-gradient(to right, var(--line) 0 6px, transparent 6px 10px);
-  }
-
-  /* ---------- SKILLS ---------- */
-  .skill-grid{
-    display:grid;
-    grid-template-columns:repeat(2, 1fr);
-    gap:14px;
-  }
-  .skill-card{
-    background:var(--paper-2);
-    border:1px solid var(--line);
-    border-left:3px solid var(--copper);
-    border-radius:var(--radius);
-    padding:14px 16px;
-  }
-  .skill-card h3{
-    font-family:var(--mono);
-    font-size:11.5px;
-    letter-spacing:0.1em;
-    text-transform:uppercase;
-    color:var(--muted);
-    margin:0 0 8px;
-    font-weight:500;
-  }
-  .skill-card p{
-    margin:0;
-    font-size:14.5px;
-    color:var(--ink);
-    line-height:1.5;
-  }
-
-  /* ---------- TIMELINE (experience + education) ---------- */
-  .timeline{
-    position:relative;
-    margin:0;
-    padding-left:26px;
-  }
-  .timeline::before{
-    content:"";
-    position:absolute;
-    left:5px;
-    top:6px;
-    bottom:6px;
-    width:1px;
-    background:var(--line);
-  }
-  .t-item{
-    position:relative;
-    padding-bottom:26px;
-  }
-  .t-item:last-child{padding-bottom:0;}
-  .t-item::before{
-    content:"";
-    position:absolute;
-    left:-26px;
-    top:4px;
-    width:9px;
-    height:9px;
-    border-radius:50%;
-    background:var(--paper);
-    border:2px solid var(--copper);
-  }
-  .t-head{
-    display:flex;
-    justify-content:space-between;
-    align-items:baseline;
-    gap:14px;
-    flex-wrap:wrap;
-    margin-bottom:4px;
-  }
-  .t-head h3{
-    font-family:var(--display);
-    font-size:17px;
-    font-weight:600;
-    margin:0;
-    color:var(--ink);
-  }
-  .t-head .when{
-    font-family:var(--mono);
-    font-size:12.5px;
-    color:var(--copper);
-    white-space:nowrap;
-  }
-  .t-org{
-    font-size:13.5px;
-    color:var(--muted);
-    margin:0 0 8px;
-    font-style:italic;
-  }
-  .t-item p.desc{
-    margin:0;
-    font-size:14.5px;
-    color:var(--ink-soft);
-  }
-
-  /* ---------- PROJECTS ---------- */
-  .proj-grid{
-    display:grid;
-    grid-template-columns:repeat(2, 1fr);
-    gap:16px;
-  }
-  .proj-card{
-    background:var(--paper-2);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:18px 20px;
-    transition:border-color .15s ease, transform .15s ease;
-  }
-  .proj-card:hover{
-    border-color:var(--copper);
-    transform:translateY(-2px);
-  }
-  .proj-card h3{
-    font-family:var(--display);
-    font-size:16px;
-    font-weight:600;
-    margin:0 0 8px;
-    color:var(--ink);
-  }
-  .proj-card p{
-    margin:0 0 12px;
-    font-size:14px;
-    color:var(--ink-soft);
-  }
-  .tag-row{
-    display:flex;
-    flex-wrap:wrap;
-    gap:6px;
-  }
-  .tag-row span{
-    font-family:var(--mono);
-    font-size:10.5px;
-    letter-spacing:0.04em;
-    color:var(--ink-soft);
-    background:rgba(25,35,28,0.06);
-    border:1px solid var(--line);
-    padding:2px 7px;
-    border-radius:var(--radius);
-  }
-
-  /* ---------- CERTIFICATIONS ---------- */
-  .cert-list{
-    list-style:none;
-    margin:0;
-    padding:0;
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-  }
-  .cert-list li{
-    position:relative;
-    padding-left:20px;
-    font-size:14.5px;
-    color:var(--ink-soft);
-  }
-  .cert-list li::before{
-    content:"";
-    position:absolute;
-    left:0;
-    top:7px;
-    width:8px;
-    height:8px;
-    background:var(--solder);
-    border-radius:1px;
-    transform:rotate(45deg);
-  }
-  .cert-list strong{color:var(--ink);font-weight:600;}
-
-  /* ---------- FOOTER ---------- */
-  footer{
-    padding:26px 44px 40px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:12px;
-    font-family:var(--mono);
-    font-size:11.5px;
-    color:var(--muted);
-  }
-  footer a{color:var(--muted);text-decoration:underline;}
-
-  .print-btn{
-    font-family:var(--mono);
-    font-size:11.5px;
-    letter-spacing:0.06em;
-    text-transform:uppercase;
-    color:#EFEBDD;
-    background:var(--copper);
-    border:none;
-    padding:8px 14px;
-    border-radius:var(--radius);
-    cursor:pointer;
-    transition:background .15s ease;
-  }
-  .print-btn:hover{background:var(--solder);}
-
-  /* ---------- RESPONSIVE ---------- */
-  @media (max-width:680px){
-    header.panel{padding:36px 22px 30px;}
-    .summary{padding:26px 22px;}
-    section{padding:28px 22px;}
-    .skill-grid, .proj-grid{grid-template-columns:1fr;}
-    .contact-rail{min-width:0;}
-    footer{padding:24px 22px 32px;}
-  }
-
-  @media (prefers-reduced-motion: reduce){
-    *{transition:none !important; scroll-behavior:auto !important;}
-  }
-
-  /* ---------- PRINT ---------- */
-  @media print{
-    body{background:#fff;}
-    .sheet{max-width:100%;}
-    header.panel{
-      background:var(--panel) !important;
-      -webkit-print-color-adjust:exact;
-      print-color-adjust:exact;
-      padding:28px 32px 24px;
-    }
-    .pad-grid{display:none;}
-    section{padding:18px 32px;break-inside:avoid;}
-    .summary{padding:18px 32px 18px;}
-    .proj-card:hover{transform:none;}
-    .print-btn{display:none;}
-    a{text-decoration:none;color:var(--ink);}
-  }
-</style>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<div class="sheet">
-
-  <header class="panel">
-    <div class="pad-grid" aria-hidden="true"></div>
-    <div class="head-row">
-      <div class="id-block">
-        <p class="eyebrow">// profile</p>
-        <h1>Deepanshu&nbsp;Swami</h1>
-        <p class="role">B.Tech (AI &amp; Data Science) student building on‑device ML apps, embedded security systems, and Android tools — trained in ethical hacking and network pentesting.</p>
-      </div>
-      <div class="contact-rail">
-        <a href="mailto:deepanshuswami8828@gmail.com">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
-          deepanshuswami8828@gmail.com
-        </a>
-        <a href="tel:+918178942553">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.97.36 1.93.67 2.85a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.23-1.24a2 2 0 0 1 2.11-.45c.92.31 1.88.54 2.85.67A2 2 0 0 1 22 16.92z"/></svg>
-          +91 8178942553
-        </a>
-        <span style="display:flex;align-items:center;gap:8px;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Delhi, India
-        </span>
-        <a href="https://github.com/deepanshuswami" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.1 3.3 9.4 7.9 11 .6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.9 1.2 1.9 1.2 3.2 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
-          github.com/deepanshuswami
-        </a>
-        <a href="https://www.linkedin.com/in/deepanshu-swami-394aa9275/" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
-          linkedin.com/in/deepanshu-swami
-        </a>
-      </div>
+<body class="clean-theme">
+    <!-- Ambient Particle Background -->
+    <div class="canvas-container">
+        <canvas id="ambient-canvas"></canvas>
     </div>
-  </header>
 
-  <div class="summary">
-    Hands-on experience across <strong>Android development</strong> (Kotlin/Java), <strong>IoT</strong>, and <strong>cybersecurity</strong>. Shipped 5+ working apps, including an on‑device ML assistive tool for visually impaired users and a facial‑recognition vehicle lock — plus formal training in ethical hacking and network pentesting.
-  </div>
+    <!-- Navigation Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="#hero" class="logo" aria-label="Deepanshu Swami Home">
+                <span class="logo-accent">D.</span>SWAMI
+            </a>
+            <nav class="nav-links" aria-label="Main Navigation">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#credentials" class="nav-link">Achievements</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a href="resume.html" target="_blank" class="btn btn-outline" id="download-cv-btn">
+                    <i data-lucide="download" class="btn-icon" aria-hidden="true"></i> Download CV
+                </a>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
 
-  <section aria-labelledby="skills-h">
-    <div class="sec-label"><span class="tag">skills</span><span class="rule"></span></div>
-    <div class="skill-grid">
-      <div class="skill-card">
-        <h3>Languages</h3>
-        <p>Kotlin · Java · Python · C++ · SQL</p>
-      </div>
-      <div class="skill-card">
-        <h3>Android</h3>
-        <p>Android SDK · Jetpack · Retrofit · REST APIs · Firebase · MVVM</p>
-      </div>
-      <div class="skill-card">
-        <h3>AI / ML</h3>
-        <p>TensorFlow Lite · OpenCV · Computer Vision · NumPy · Pandas</p>
-      </div>
-      <div class="skill-card">
-        <h3>IoT &amp; Security</h3>
-        <p>Arduino · Raspberry Pi · Ethical Hacking · Network Pentesting · Vulnerability Assessment</p>
-      </div>
-      <div class="skill-card" style="grid-column:1 / -1;">
-        <h3>Tools</h3>
-        <p>Git · GitHub · Android Studio · VS Code · Postman</p>
-      </div>
+    <!-- Main Content Container -->
+    <main class="content-container">
+        
+        <!-- Hero Section -->
+        <section class="hero-section" id="hero">
+            <div class="hero-info" data-reveal="fade-up">
+                <div class="status-badge">
+                    <span class="pulse-indicator" aria-hidden="true"></span>
+                    <span>Open to Internships &amp; Collaborations</span>
+                </div>
+                <h1 class="hero-name">Deepanshu Swami</h1>
+                <h2 class="hero-title">B.Tech Student in Artificial Intelligence &amp; Data Science</h2>
+                <p class="hero-one-liner">
+                    I build on-device ML apps, embedded security systems, and Android tools — engineering where silicon meets code.
+                </p>
+                <div class="hero-ctas">
+                    <a href="#projects" class="btn btn-primary">
+                        View Work <i data-lucide="arrow-right" class="btn-icon-right" aria-hidden="true"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        Get in Touch
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-graphic" data-reveal="fade-up">
+                <!-- Clean Code Profile Card -->
+                <div class="code-profile-card">
+                    <div class="code-card-header">
+                        <span class="code-dot red"></span>
+                        <span class="code-dot yellow"></span>
+                        <span class="code-dot green"></span>
+                        <span class="code-file-name">profile.json</span>
+                    </div>
+                    <div class="code-card-body">
+                        <pre><code><span class="json-key">"builder"</span>: {
+  <span class="json-key">"name"</span>: <span class="json-val">"Deepanshu Swami"</span>,
+  <span class="json-key">"focus"</span>: [<span class="json-val">"On-Device AI"</span>, <span class="json-val">"Android"</span>, <span class="json-val">"IoT"</span>],
+  <span class="json-key">"location"</span>: <span class="json-val">"Delhi, India"</span>,
+  <span class="json-key">"education"</span>: <span class="json-val">"B.Tech AI &amp; DS (2024-2027)"</span>,
+  <span class="json-key">"status"</span>: <span class="json-val">"Actively seeking opportunities"</span>
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section about-section" id="about" data-reveal="fade-up">
+            <div class="section-header">
+                <span class="section-pretitle">01 / Profile</span>
+                <h2 class="section-heading">About Me</h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I am a developer and B.Tech student majoring in **Artificial Intelligence &amp; Data Science** at the Vivekananda Institute of Professional Studies, Delhi. My technical interest centers on engineering functional systems—where machine learning models and mobile software coordinate directly with physical IoT devices.
+                    </p>
+                    <p>
+                        I have hands-on experience across Android development using Kotlin and Java, microcontrollers, and cybersecurity. I have built and shipped over 5 working applications, including an offline, voice-interactive object detection assistant for visually impaired users and a facial-recognition vehicle lock.
+                    </p>
+                    <p>
+                        Additionally, I have completed formal training in ethical hacking and network pentesting, which helps me ensure that the hardware and software systems I design remain secure and robust.
+                    </p>
+                </div>
+                
+                <div class="about-facts">
+                    <div class="fact-card">
+                        <span class="fact-label">Location</span>
+                        <span class="fact-value">Delhi, India</span>
+                    </div>
+                    <div class="fact-card">
+                        <span class="fact-label">B.Tech Cohort</span>
+                        <span class="fact-value">2024 – 2027</span>
+                    </div>
+                    <div class="fact-card">
+                        <span class="fact-label">Completed Builds</span>
+                        <span class="fact-value">5+ Shipped</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="section skills-section" id="skills" data-reveal="fade-up">
+            <div class="section-header">
+                <span class="section-pretitle">02 / Stacks</span>
+                <h2 class="section-heading">Skills &amp; Technologies</h2>
+            </div>
+            
+            <div class="skills-grid">
+                <!-- Group 1: Languages -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i data-lucide="code" class="category-icon" aria-hidden="true"></i>
+                        <h3>Languages</h3>
+                    </div>
+                    <ul class="skill-tags-list">
+                        <li>Kotlin</li>
+                        <li>Java</li>
+                        <li>Python</li>
+                        <li>C++</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+
+                <!-- Group 2: Android -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i data-lucide="smartphone" class="category-icon" aria-hidden="true"></i>
+                        <h3>Android</h3>
+                    </div>
+                    <ul class="skill-tags-list">
+                        <li>Android SDK</li>
+                        <li>Jetpack</li>
+                        <li>Retrofit</li>
+                        <li>REST APIs</li>
+                        <li>Firebase</li>
+                        <li>MVVM</li>
+                    </ul>
+                </div>
+
+                <!-- Group 3: AI/ML -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i data-lucide="brain" class="category-icon" aria-hidden="true"></i>
+                        <h3>AI / ML</h3>
+                    </div>
+                    <ul class="skill-tags-list">
+                        <li>TensorFlow Lite</li>
+                        <li>OpenCV</li>
+                        <li>Computer Vision</li>
+                        <li>NumPy</li>
+                        <li>Pandas</li>
+                    </ul>
+                </div>
+
+                <!-- Group 4: IoT & Security -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i data-lucide="cpu" class="category-icon" aria-hidden="true"></i>
+                        <h3>IoT &amp; Security</h3>
+                    </div>
+                    <ul class="skill-tags-list">
+                        <li>Arduino</li>
+                        <li>Raspberry Pi</li>
+                        <li>Ethical Hacking</li>
+                        <li>Network Pentesting</li>
+                        <li>Vulnerability Assessment</li>
+                    </ul>
+                </div>
+
+                <!-- Group 5: Tools -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i data-lucide="wrench" class="category-icon" aria-hidden="true"></i>
+                        <h3>Tools</h3>
+                    </div>
+                    <ul class="skill-tags-list">
+                        <li>Git &amp; GitHub</li>
+                        <li>Android Studio</li>
+                        <li>VS Code</li>
+                        <li>Postman</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="section projects-section" id="projects" data-reveal="fade-up">
+            <div class="section-header">
+                <span class="section-pretitle">03 / Works</span>
+                <h2 class="section-heading">Featured Projects</h2>
+            </div>
+            
+            <div class="projects-grid">
+                
+                <!-- Project 1: Dost AI -->
+                <div class="project-card" data-project="dost-ai">
+                    <div class="project-info-block">
+                        <div class="project-header-row">
+                            <span class="project-number">01</span>
+                            <span class="project-badge">On-Device ML</span>
+                        </div>
+                        <h3 class="project-name">Dost AI</h3>
+                        <p class="project-description">
+                            Real-time on-device object detection with a voice UI for visually impaired users. Operates fully offline to ensure low latency and user privacy.
+                        </p>
+                    </div>
+                    <div class="project-footer">
+                        <div class="project-tags">
+                            <span class="tag">Android</span>
+                            <span class="tag">TensorFlow Lite</span>
+                            <span class="tag">Voice UI</span>
+                        </div>
+                        <button class="project-spec-btn" aria-haspopup="dialog" aria-label="View Dost AI specifications">
+                            System Specs <i data-lucide="chevron-right" class="icon-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 2: AI Vehicle Lock System -->
+                <div class="project-card" data-project="vehicle-lock">
+                    <div class="project-info-block">
+                        <div class="project-header-row">
+                            <span class="project-number">02</span>
+                            <span class="project-badge">IoT Security</span>
+                        </div>
+                        <h3 class="project-name">AI Vehicle Lock System</h3>
+                        <p class="project-description">
+                            Facial-recognition vehicle security lock. Integrates local OpenCV computations in Python with Arduino microcontrollers for secure, physical solenoid control.
+                        </p>
+                    </div>
+                    <div class="project-footer">
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">OpenCV</span>
+                            <span class="tag">Arduino</span>
+                        </div>
+                        <button class="project-spec-btn" aria-haspopup="dialog" aria-label="View AI Vehicle Lock System specifications">
+                            System Specs <i data-lucide="chevron-right" class="icon-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 3: Attendance Monitoring System -->
+                <div class="project-card" data-project="attendance">
+                    <div class="project-info-block">
+                        <div class="project-header-row">
+                            <span class="project-number">03</span>
+                            <span class="project-badge">Mobile Portal</span>
+                        </div>
+                        <h3 class="project-name">Attendance Monitoring System</h3>
+                        <p class="project-description">
+                            Digital attendance logging system replacing manual physical records. Built with Kotlin and Firebase to support real-time sync and admin controls for 200+ students.
+                        </p>
+                    </div>
+                    <div class="project-footer">
+                        <div class="project-tags">
+                            <span class="tag">Kotlin</span>
+                            <span class="tag">Firebase</span>
+                        </div>
+                        <button class="project-spec-btn" aria-haspopup="dialog" aria-label="View Attendance Monitoring System specifications">
+                            System Specs <i data-lucide="chevron-right" class="icon-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 4: Tuition Centre App -->
+                <div class="project-card" data-project="tuition">
+                    <div class="project-info-block">
+                        <div class="project-header-row">
+                            <span class="project-number">04</span>
+                            <span class="project-badge">Mobile Sync</span>
+                        </div>
+                        <h3 class="project-name">Tuition Centre App</h3>
+                        <p class="project-description">
+                            Android student registry portal. Manages detailed pupil profiles, course schedules, and implements push notifications via Firebase Cloud Messaging.
+                        </p>
+                    </div>
+                    <div class="project-footer">
+                        <div class="project-tags">
+                            <span class="tag">Kotlin</span>
+                            <span class="tag">Firebase</span>
+                        </div>
+                        <button class="project-spec-btn" aria-haspopup="dialog" aria-label="View Tuition Centre App specifications">
+                            System Specs <i data-lucide="chevron-right" class="icon-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 5: IoT Medicine Reminder -->
+                <div class="project-card" data-project="medicine">
+                    <div class="project-info-block">
+                        <div class="project-header-row">
+                            <span class="project-number">05</span>
+                            <span class="project-badge">Hardware Firmware</span>
+                        </div>
+                        <h3 class="project-name">IoT Medicine Reminder</h3>
+                        <p class="project-description">
+                            Sensor-driven physical medicine scheduler designed for elderly patient safety. Combines Arduino firmware with real-time clock and distance sensors.
+                        </p>
+                    </div>
+                    <div class="project-footer">
+                        <div class="project-tags">
+                            <span class="tag">Arduino</span>
+                            <span class="tag">C++</span>
+                            <span class="tag">Sensors</span>
+                        </div>
+                        <button class="project-spec-btn" aria-haspopup="dialog" aria-label="View IoT Medicine Reminder specifications">
+                            System Specs <i data-lucide="chevron-right" class="icon-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Experience Timeline Section -->
+        <section class="section experience-section" id="experience" data-reveal="fade-up">
+            <div class="section-header">
+                <span class="section-pretitle">04 / Chronology</span>
+                <h2 class="section-heading">Work &amp; Education</h2>
+            </div>
+            
+            <div class="experience-timeline">
+                
+                <!-- Experience Item 1 -->
+                <div class="timeline-row">
+                    <div class="timeline-meta">
+                        <span class="meta-date">Jun – Jul 2025</span>
+                        <span class="meta-label">Internship</span>
+                    </div>
+                    <div class="timeline-detail">
+                        <h3 class="timeline-title">Ethical Hacking &amp; Network Pentesting Intern</h3>
+                        <h4 class="timeline-subtitle">Craw Security · VIPS Delhi</h4>
+                        <p class="timeline-desc">
+                            Completed industrial training in network security auditing, penetration testing, and vulnerability assessment. Built and ran scans against internal network configurations, logged network payloads, and designed security remediations.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="timeline-row">
+                    <div class="timeline-meta">
+                        <span class="meta-date">Jun – Jul 2023</span>
+                        <span class="meta-label">Internship</span>
+                    </div>
+                    <div class="timeline-detail">
+                        <h3 class="timeline-title">Software Development Intern</h3>
+                        <h4 class="timeline-subtitle">Silizon Technologies LLP · Noida</h4>
+                        <p class="timeline-desc">
+                            Contributed to code reviews, fixed UI components in collaboration with the engineering team, and was recognized for speed of learning and diligence.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Education Item 1 -->
+                <div class="timeline-row education-row">
+                    <div class="timeline-meta">
+                        <span class="meta-date">2024 – 2027</span>
+                        <span class="meta-label">Education</span>
+                    </div>
+                    <div class="timeline-detail">
+                        <h3 class="timeline-title">B.Tech — Artificial Intelligence &amp; Data Science</h3>
+                        <h4 class="timeline-subtitle">Vivekananda Institute of Professional Studies, Delhi</h4>
+                        <p class="timeline-desc">Focusing on machine learning, statistical computing, algorithm design, and data pipelines.</p>
+                    </div>
+                </div>
+
+                <!-- Education Item 2 -->
+                <div class="timeline-row education-row">
+                    <div class="timeline-meta">
+                        <span class="meta-date">2021 – 2024</span>
+                        <span class="meta-label">Education</span>
+                    </div>
+                    <div class="timeline-detail">
+                        <h3 class="timeline-title">Diploma — Electronics &amp; Communication Engineering</h3>
+                        <h4 class="timeline-subtitle">DSEU Rohini Campus, Delhi</h4>
+                        <p class="timeline-desc">Studied analog/digital circuits, microprocessors, signal processing, and embedded firmware.</p>
+                    </div>
+                </div>
+
+                <!-- Education Item 3 -->
+                <div class="timeline-row education-row">
+                    <div class="timeline-meta">
+                        <span class="meta-date">2021</span>
+                        <span class="meta-label">Education</span>
+                    </div>
+                    <div class="timeline-detail">
+                        <h3 class="timeline-title">Class X (CBSE)</h3>
+                        <h4 class="timeline-subtitle">St. Vyas Public School, Delhi</h4>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section class="section credentials-section" id="credentials" data-reveal="fade-up">
+            <div class="section-header">
+                <span class="section-pretitle">05 / Accreditation</span>
+                <h2 class="section-heading">Certifications &amp; Achievements</h2>
+            </div>
+            
+            <div class="credentials-grid">
+                
+                <div class="credential-card">
+                    <div class="credential-header">
+                        <span class="credential-issuer">Edunet Foundation</span>
+                        <span class="credential-date">SAP Code Unnati</span>
+                    </div>
+                    <h3 class="credential-title">Certificate of Achievement</h3>
+                    <p class="credential-desc">
+                        Validated training in Machine Learning, Internet of Things (IoT), Deep Learning, Computer Vision, and SAP Business Technology Platform (BTP).
+                    </p>
+                </div>
+
+                <div class="credential-card">
+                    <div class="credential-header">
+                        <span class="credential-issuer">GTU + SAP India</span>
+                        <span class="credential-date">Hackathon</span>
+                    </div>
+                    <h3 class="credential-title">Innovation Marathon Participant</h3>
+                    <p class="credential-desc">
+                        Hacked IoT prototypes and edge computing projects in a competitive team setting, focusing on industrial solutions.
+                    </p>
+                </div>
+
+                <div class="credential-card">
+                    <div class="credential-header">
+                        <span class="credential-issuer">IIT Bombay</span>
+                        <span class="credential-date">Workshop</span>
+                    </div>
+                    <h3 class="credential-title">Robotics Workshop</h3>
+                    <p class="credential-desc">
+                        Completed hardware robotics training under CODEX Code Club (VIPS) in association with IIT Bombay's Techfest.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section contact-section" id="contact" data-reveal="fade-up">
+            <div class="section-header">
+                <span class="section-pretitle">06 / Comms</span>
+                <h2 class="section-heading">Contact</h2>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <p class="contact-intro">
+                        Have an internship opportunity, project collaboration, or query? Feel free to reach out. I am generally quick to respond.
+                    </p>
+                    
+                    <div class="contact-methods">
+                        <a href="mailto:deepanshuswami8828@gmail.com" class="method-link" aria-label="Send Email to deepanshuswami8828@gmail.com">
+                            <i data-lucide="mail" class="method-icon" aria-hidden="true"></i>
+                            <div class="method-meta">
+                                <span class="method-title">Email</span>
+                                <span class="method-detail">deepanshuswami8828@gmail.com</span>
+                            </div>
+                        </a>
+
+                        <a href="tel:+918178942553" class="method-link" aria-label="Call +91 8178942553">
+                            <i data-lucide="phone" class="method-icon" aria-hidden="true"></i>
+                            <div class="method-meta">
+                                <span class="method-title">Phone</span>
+                                <span class="method-detail">+91 8178942553</span>
+                            </div>
+                        </a>
+
+                        <a href="https://github.com/deepanshuswami" target="_blank" rel="noopener noreferrer" class="method-link" aria-label="Visit GitHub Profile">
+                            <i data-lucide="github" class="method-icon" aria-hidden="true"></i>
+                            <div class="method-meta">
+                                <span class="method-title">GitHub</span>
+                                <span class="method-detail">github.com/deepanshuswami</span>
+                            </div>
+                        </a>
+
+                        <a href="https://linkedin.com/in/deepanshu-swami-394aa9275" target="_blank" rel="noopener noreferrer" class="method-link" aria-label="Visit LinkedIn Profile">
+                            <i data-lucide="linkedin" class="method-icon" aria-hidden="true"></i>
+                            <div class="method-meta">
+                                <span class="method-title">LinkedIn</span>
+                                <span class="method-detail">linkedin.com/in/deepanshu-swami-394aa9275</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form-block">
+                    <form class="clean-form" id="contact-form" action="javascript:void(0)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="form-name">Name</label>
+                                <input type="text" id="form-name" required placeholder="Your Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="form-email">Email Address</label>
+                                <input type="email" id="form-email" required placeholder="your.email@example.com">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-message">Message</label>
+                            <textarea id="form-message" required placeholder="Write your message here..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            Send Message
+                        </button>
+                        <div class="form-status-message" id="form-status" role="status" aria-live="polite"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p class="footer-copyright">&copy; 2026 Deepanshu Swami. All rights reserved.</p>
+            <p class="footer-built">Designed with focus &amp; care.</p>
+        </div>
+    </footer>
+
+    <!-- Side Panel / Modal overlay for Project Specs -->
+    <div class="modal-overlay" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="project-modal-title" style="display:none;">
+        <div class="modal-window">
+            <div class="modal-header">
+                <h3 id="project-modal-title">Project Specifications</h3>
+                <button class="modal-close" id="close-project-btn" aria-label="Close dialog">&times;</button>
+            </div>
+            <div class="modal-body" id="project-modal-content">
+                <!-- Content injected dynamically -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="close-project-footer-btn">Close</button>
+            </div>
+        </div>
     </div>
-  </section>
 
-  <section aria-labelledby="exp-h">
-    <div class="sec-label"><span class="tag">internship experience</span><span class="rule"></span></div>
-    <div class="timeline">
-      <div class="t-item">
-        <div class="t-head">
-          <h3>Ethical Hacking &amp; Network Pentesting Intern</h3>
-          <span class="when">Jun – Jul 2025</span>
-        </div>
-        <p class="t-org">Craw Security · VIPS Delhi</p>
-        <p class="desc">Industrial training in ethical hacking, network pentesting, and vulnerability assessment under CRAW Security.</p>
-      </div>
-      <div class="t-item">
-        <div class="t-head">
-          <h3>Software Development Intern</h3>
-          <span class="when">Jun – Jul 2023</span>
-        </div>
-        <p class="t-org">Silizon Technologies LLP · Noida</p>
-        <p class="desc">Contributed to software development over 4 weeks; recognized as hardworking and a quick learner.</p>
-      </div>
-    </div>
-  </section>
-
-  <section aria-labelledby="proj-h">
-    <div class="sec-label"><span class="tag">projects</span><span class="rule"></span></div>
-    <div class="proj-grid">
-      <div class="proj-card">
-        <h3>Dost AI</h3>
-        <p>Real-time on-device object detection with a voice UI for visually impaired users — works fully offline.</p>
-        <div class="tag-row"><span>Android</span><span>TensorFlow Lite</span><span>Voice UI</span></div>
-      </div>
-      <div class="proj-card">
-        <h3>AI Vehicle Lock System</h3>
-        <p>Facial-recognition vehicle security that pairs OpenCV with Arduino hardware for physical lock control.</p>
-        <div class="tag-row"><span>Python</span><span>OpenCV</span><span>Arduino</span></div>
-      </div>
-      <div class="proj-card">
-        <h3>Attendance Monitoring System</h3>
-        <p>Digital attendance app with real-time sync, replacing manual records for 200+ students.</p>
-        <div class="tag-row"><span>Kotlin</span><span>Firebase</span></div>
-      </div>
-      <div class="proj-card">
-        <h3>Tuition Centre App</h3>
-        <p>Student profiles, schedules, and push notifications via Firebase Cloud Messaging.</p>
-        <div class="tag-row"><span>Kotlin</span><span>Firebase</span></div>
-      </div>
-      <div class="proj-card" style="grid-column:1 / -1;">
-        <h3>IoT Medicine Reminder</h3>
-        <p>Sensor-based medication reminder device built for elderly patients.</p>
-        <div class="tag-row"><span>Arduino</span><span>C++</span><span>Sensors</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section aria-labelledby="cert-h">
-    <div class="sec-label"><span class="tag">certifications &amp; achievements</span><span class="rule"></span></div>
-    <ul class="cert-list">
-      <li><strong>SAP Code Unnati</strong> — Certificate of Achievement: ML, IoT, Deep Learning, Computer Vision, SAP BTP (Edunet Foundation)</li>
-      <li><strong>SAP Code Unnati</strong> — Innovation Marathon Participant, GTU + SAP India</li>
-      <li><strong>Robotics Workshop</strong> — CODEX Code Club, VIPS · Techfest, IIT Bombay</li>
-    </ul>
-  </section>
-
-  <section aria-labelledby="edu-h">
-    <div class="sec-label"><span class="tag">education</span><span class="rule"></span></div>
-    <div class="timeline">
-      <div class="t-item">
-        <div class="t-head">
-          <h3>B.Tech — Artificial Intelligence &amp; Data Science</h3>
-          <span class="when">2024 – 2027</span>
-        </div>
-        <p class="t-org">Vivekananda Institute of Professional Studies, Delhi</p>
-      </div>
-      <div class="t-item">
-        <div class="t-head">
-          <h3>Diploma — Electronics &amp; Communication Engineering</h3>
-          <span class="when">2021 – 2024</span>
-        </div>
-        <p class="t-org">DSEU Rohini Campus, Delhi</p>
-      </div>
-      <div class="t-item">
-        <div class="t-head">
-          <h3>Class X — CBSE</h3>
-          <span class="when">2021</span>
-        </div>
-        <p class="t-org">St. Vyas Public School, Delhi</p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <span>© 2026 Deepanshu Swami — built as a static one-page CV.</span>
-    <button class="print-btn" onclick="window.print()">Save as PDF</button>
-  </footer>
-
-</div>
+    <!-- JS Entry Point -->
+    <script src="main.js"></script>
 </body>
 </html>

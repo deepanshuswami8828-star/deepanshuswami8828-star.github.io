@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Deepanshu Swami</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1e293b;
+            background-color: #f8fafc;
+            line-height: 1.5;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            position: relative;
+        }
+        .header-actions {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 25px;
+            gap: 10px;
+        }
+        .btn-print {
+            background-color: #3b82f6;
+            color: #ffffff;
+            border: none;
+            padding: 10px 18px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.15s ease;
+        }
+        .btn-print:hover {
+            background-color: #2563eb;
+        }
+        .btn-close {
+            background-color: #f1f5f9;
+            color: #475569;
+            border: 1px solid #e2e8f0;
+            padding: 10px 18px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn-close:hover {
+            background-color: #e2e8f0;
+        }
+        .resume-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .resume-header h1 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+        .resume-contacts {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+        .resume-contacts span::after {
+            content: ' \2022 ';
+            margin: 0 6px;
+            color: #cbd5e1;
+        }
+        .resume-contacts span:last-child::after {
+            content: '';
+        }
+        .resume-contacts a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        .resume-contacts a:hover {
+            text-decoration: underline;
+        }
+        .resume-section {
+            margin-bottom: 28px;
+        }
+        .resume-section h2 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #0f172a;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 6px;
+            margin-bottom: 15px;
+        }
+        .resume-item {
+            margin-bottom: 16px;
+        }
+        .resume-item:last-child {
+            margin-bottom: 0;
+        }
+        .resume-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+        .resume-item-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #1e293b;
+        }
+        .resume-item-meta {
+            font-size: 0.85rem;
+            color: #64748b;
+            font-weight: 500;
+        }
+        .resume-item-subtitle {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #475569;
+            margin-bottom: 6px;
+        }
+        .resume-item-desc {
+            font-size: 0.9rem;
+            color: #475569;
+        }
+        .skills-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .skills-row {
+            font-size: 0.9rem;
+            color: #475569;
+        }
+        .skills-row strong {
+            color: #1e293b;
+            font-weight: 600;
+        }
+        /* Print Styles */
+        @media print {
+            body {
+                background-color: #ffffff;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                padding: 0;
+            }
+            .header-actions {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Control buttons (Hidden in Print) -->
+        <div class="header-actions">
+            <a href="index.html" class="btn-close">Back to Portfolio</a>
+            <button class="btn-print" onclick="window.print()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                Print to PDF
+            </button>
+        </div>
+
+        <!-- Resume Page -->
+        <header class="resume-header">
+            <h1>Deepanshu Swami</h1>
+            <p class="resume-contacts">
+                <span>Delhi, India</span>
+                <span>+91 8178942553</span>
+                <span><a href="mailto:deepanshuswami8828@gmail.com">deepanshuswami8828@gmail.com</a></span><br>
+                <span><a href="https://github.com/deepanshuswami" target="_blank">github.com/deepanshuswami</a></span>
+                <span><a href="https://linkedin.com/in/deepanshu-swami-394aa9275" target="_blank">linkedin.com/in/deepanshu-swami-394aa9275</a></span>
+            </p>
+        </header>
+
+        <section class="resume-section">
+            <h2>Education</h2>
+            <div class="resume-item">
+                <div class="resume-item-header">
+                    <span class="resume-item-title">B.Tech in Artificial Intelligence &amp; Data Science</span>
+                    <span class="resume-item-meta">2024 – 2027</span>
+                </div>
+                <div class="resume-item-subtitle">Vivekananda Institute of Professional Studies, Delhi</div>
+            </div>
+            <div class="resume-item">
+                <div class="resume-item-header">
+                    <span class="resume-item-title">Diploma in Electronics &amp; Communication Engineering</span>
+                    <span class="resume-item-meta">2021 – 2024</span>
+                </div>
+                <div class="resume-item-subtitle">DSEU Rohini Campus, Delhi</div>
+            </div>
+            <div class="resume-item">
+                <div class="resume-item-header">
+                    <span class="resume-item-title">Class X (CBSE)</span>
+                    <span class="resume-item-meta">2021</span>
+                </div>
+                <div class="resume-item-subtitle">St. Vyas Public School, Delhi</div>
+            </div>
+        </section>
+
+        <section class="resume-section">
+            <h2>Technical Skills</h2>
+            <div class="skills-list">
+                <div class="skills-row">
+                    <strong>Languages:</strong> Kotlin, Java, Python, C++, SQL
+                </div>
+                <div class="skills-row">
+                    <strong>Android:</strong> Android SDK, Jetpack, Retrofit, REST APIs, Firebase, MVVM
+                </div>
+                <div class="skills-row">
+                    <strong>AI/ML:</strong> TensorFlow Lite, OpenCV, Computer Vision, NumPy, Pandas
+                </div>
+                <div class="skills-row">
+                    <strong>IoT &amp; Security:</strong> Arduino, Raspberry Pi, Ethical Hacking, Network Pentesting, Vulnerability Assessment
+                </div>
+                <div class="skills-row">
+                    <strong>Tools:</strong> Git, GitHub, Android Studio, VS Code, Postman
+                </div>
+            </div>
+        </section>
+
+        <section class="resume-section">
+            <h2>Experience</h2>
+            <div class="resume-item">
+                <div class="resume-item-header">
+                    <span class="resume-item-title">Ethical Hacking &amp; Network Pentesting Intern</span>
+                    <span class="resume-item-meta">Jun – Jul 2025</span>
+                </div>
+                <div class="resume-item-subtitle">Craw Security · VIPS Delhi</div>
+                <p class="resume-item-desc">Completed industrial training in network pentesting and vulnerability assessments. Ran security audits on configured network nodes, logged transmission outputs, and planned security fixes.</p>
+            </div>
+            <div class="resume-item">
+                <div class="resume-item-header">
+                    <span class="resume-item-title">Software Development Intern</span>
+                    <span class="resume-item-meta">Jun – Jul 2023</span>
+                </div>
+                <div class="resume-item-subtitle">Silizon Technologies LLP · Noida</div>
+                <p class="resume-item-desc">Assisted in software development tasks, debugged user interface errors, and was recognized by supervisors for high motivation and fast learning pace.</p>
+            </div>
+        </section>
+
+        <section class="resume-section">
+            <h2>Projects</h2>
+            <div class="resume-item">
+                <div class="resume-item-header">
+                    <span class="resume-item-title">Dost AI — Assistive Voice UI Object Detector</span>
+                </div>
+                <p class="resume-item-desc">Real-time local computer vision detection engine running offline on Android using TensorFlow Lite, outputting spoken object logs for visually impaired assistance.</p>
+            </div>
+            <div class="resume-item">
+                <div class="resume-item-header">
+                    <span class="resume-item-title">AI Vehicle Lock System — Biometric Ignition Guard</span>
+                </div>
+                <p class="resume-item-desc">Facial verification lock pairing Python-based OpenCV vision layers with Arduino microcontrollers over serial channels to control physical relay locks.</p>
+            </div>
+            <div class="resume-item">
+                <div class="resume-item-header">
+                    <span class="resume-item-title">Attendance Monitoring System — Digital Ledger</span>
+                </div>
+                <p class="resume-item-desc">Android app replacing manual checkin grids for 200+ profiles. Built with Kotlin and integrated with Firebase Realtime Database for live synchronization.</p>
+            </div>
+        </section>
+
+        <section class="resume-section">
+            <h2>Certifications &amp; Achievements</h2>
+            <div class="resume-item">
+                <div class="resume-item-header">
+                    <span class="resume-item-title">SAP Code Unnati Certificate of Achievement</span>
+                </div>
+                <p class="resume-item-desc">Validated training in Machine Learning, Deep Learning, Internet of Things (IoT), Computer Vision, and SAP BTP (Edunet Foundation).</p>
+            </div>
+            <div class="resume-item">
+                <div class="resume-item-header">
+                    <span class="resume-item-title">Innovation Marathon Participant</span>
+                </div>
+                <p class="resume-item-desc">Collaborated on industrial IoT and edge-computing prototype builds under GTU + SAP India.</p>
+            </div>
+            <div class="resume-item">
+                <div class="resume-item-header">
+                    <span class="resume-item-title">Robotics Summit Workshop</span>
+                </div>
+                <p class="resume-item-desc">Completed mechanical assembly and microcontroller routing under CODEX VIPS and Techfest, IIT Bombay.</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
