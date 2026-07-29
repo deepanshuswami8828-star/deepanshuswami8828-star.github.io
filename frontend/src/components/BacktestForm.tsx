@@ -157,6 +157,11 @@ export default function BacktestForm({
     e.preventDefault();
     if (!selectedStock) return;
 
+    if (startDate > endDate) {
+      setApiError("Start date must be before end date. Click '2 Years' for default range.");
+      return;
+    }
+
     onRunBacktest({
       symbol: selectedStock.symbol,
       start: startDate,
@@ -368,25 +373,67 @@ export default function BacktestForm({
 
       <form onSubmit={handleSubmit} className="space-y-5">
         {/* Date Range Selection */}
-        <div className="grid grid-cols-2 gap-4">
-          <div className="space-y-1.5">
-            <label className="text-xs font-semibold uppercase tracking-wider text-slate-400">Start Date</label>
-            <input
-              type="date"
-              value={startDate}
-              onChange={(e) => setStartDate(e.target.value)}
-              className="w-full bg-slate-950 border border-slate-800 rounded px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-blue-500"
-            />
+        <div className="space-y-2">
+          <div className="flex justify-between items-center">
+            <label className="text-xs font-semibold uppercase tracking-wider text-slate-400">Date Range</label>
+            <div className="flex space-x-1.5 text-[11px]">
+              <button
+                type="button"
+                onClick={() => {
+                  setStartDate("2023-01-01");
+                  setEndDate("2025-01-01");
+                }}
+                className="px-2 py-0.5 bg-slate-800 hover:bg-slate-700 text-blue-300 rounded font-semibold transition-all border border-slate-700"
+              >
+                2 Years
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setStartDate("2024-01-01");
+                  setEndDate("2025-01-01");
+                }}
+                className="px-2 py-0.5 bg-slate-800 hover:bg-slate-700 text-blue-300 rounded font-semibold transition-all border border-slate-700"
+              >
+                1 Year
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setStartDate("2024-07-01");
+                  setEndDate("2025-01-01");
+                }}
+                className="px-2 py-0.5 bg-slate-800 hover:bg-slate-700 text-blue-300 rounded font-semibold transition-all border border-slate-700"
+              >
+                6 Months
+              </button>
+            </div>
           </div>
-          <div className="space-y-1.5">
-            <label className="text-xs font-semibold uppercase tracking-wider text-slate-400">End Date</label>
-            <input
-              type="date"
-              value={endDate}
-              onChange={(e) => setEndDate(e.target.value)}
-              className="w-full bg-slate-950 border border-slate-800 rounded px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-blue-500"
-            />
+          <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-1">
+              <label className="text-[10px] text-slate-500 uppercase font-semibold">Start</label>
+              <input
+                type="date"
+                value={startDate}
+                onChange={(e) => setStartDate(e.target.value)}
+                className="w-full bg-slate-950 border border-slate-800 rounded px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-blue-500"
+              />
+            </div>
+            <div className="space-y-1">
+              <label className="text-[10px] text-slate-500 uppercase font-semibold">End</label>
+              <input
+                type="date"
+                value={endDate}
+                onChange={(e) => setEndDate(e.target.value)}
+                className="w-full bg-slate-950 border border-slate-800 rounded px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-blue-500"
+              />
+            </div>
           </div>
+          {startDate >= endDate && (
+            <p className="text-xs text-rose-400 font-semibold mt-1">
+              ⚠️ Start date must be before end date. Click &quot;2 Years&quot; above for default range.
+            </p>
+          )}
         </div>
 
         {/* Timeframe Dropdown */}

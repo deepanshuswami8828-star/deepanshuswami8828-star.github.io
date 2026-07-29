@@ -436,6 +436,14 @@ def get_ohlcv(
 ):
     sym = symbol.strip().upper()
     try:
+        # If start and end dates are identical, adjust end date +1 day for yfinance non-inclusive bounds
+        if start == end:
+            try:
+                dt_start = datetime.strptime(start, "%Y-%m-%d")
+                end = (dt_start + timedelta(days=1)).strftime("%Y-%m-%d")
+            except Exception:
+                pass
+
         df = get_data(sym, start, end, interval)
         if df is None or df.empty:
             return []
@@ -453,11 +461,9 @@ def get_ohlcv(
             })
         return ohlcv_bars
     except Exception as e:
-        print(f"Error fetching OHLCV for {sym}: {e}")
-        raise HTTPException(
-            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
-            detail=f"Failed to fetch market data for {sym}: {str(e)}"
-        )
+        print(f"Notice: No OHLCV data for {sym} ({start} to {end}): {e}")
+        # Return empty array gracefully instead of 422 error
+        return []
 
 @app.get("/stocks/{symbol}/status")
 def get_stock_status(symbol: str, interval: str = Query("1d"), db: Session = Depends(get_session)):
