@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+*.sqlite3
+backtestlab.db
+!backend/nse_equities.csv
+
+# Next.js / Node
+node_modules/
+.next/
+out/
+.vercel/
+*.log
+.env.local
+
+# Engine cache & temporary outputs
+backend/engine/cache/
+trading_platform/cache/
+backend/reports/*.pdf

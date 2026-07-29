@@ -1,0 +1,15 @@
+fastapi==0.110.0
+uvicorn==0.28.0
+sqlmodel==0.0.16
+pandas==2.2.1
+numpy==1.26.4
+reportlab==4.1.0
+matplotlib==3.8.3
+yfinance==0.2.37
+pyarrow==15.0.0
+pydantic==2.6.4
+python-dotenv==1.0.1
+psycopg[binary]==3.1.18
+slowapi==0.1.9
+alembic==1.13.1
+gunicorn==21.2.0

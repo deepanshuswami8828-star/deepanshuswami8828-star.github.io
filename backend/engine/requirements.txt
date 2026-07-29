@@ -1,0 +1,10 @@
+pandas>=2.0
+numpy>=1.24
+reportlab>=4.0
+matplotlib>=3.7
+yfinance>=0.2.40
+pyarrow>=14.0
+# For real intraday NSE data, also install ONE broker SDK, e.g.:
+#   pip install kiteconnect      # Zerodha (paid Connect plan, historical bundled)
+#   pip install upstox-python-sdk
+#   pip install smartapi-python  # Angel One (free)
